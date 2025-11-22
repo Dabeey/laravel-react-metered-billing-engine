@@ -5,10 +5,7 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import { useForm } from "@inertiajs/react";
 import Feature from "@/Components/Feature";
 
-
-
-
-export default function index() {
+export default function index({feature, answer}) {
     const { data, setData, post, reset, errors,processing} = useForm({
         number1: "",
         number2: "",
@@ -35,7 +32,7 @@ export default function index() {
                         name='number1'
                         value={data.number1}
                         className='mt-1 block w-full'
-                        onchange={(e) => setData('number1', e.target.value)}
+                        onChange={(e) => setData('number1', e.target.value)}
                     />
                     <InputError message={errors.number1} className="mt-2"/>
                 </div>
@@ -50,7 +47,7 @@ export default function index() {
                         className='mt-1 block w-full'
                         onchange={(e) => setData('number2', e.target.value)}
                     />
-                    <InputError message={errors.number1} className="mt-2"/>
+                    <InputError message={errors.number2} className="mt-2"/>
                 </div>
 
                 <div className="flex items-center justify-end mt-4 col-span-2">
