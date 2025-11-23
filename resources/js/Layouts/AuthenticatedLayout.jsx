@@ -8,6 +8,8 @@ import { useState } from 'react';
 export default function AuthenticatedLayout({ header, children }) {
     const user = usePage().props.auth.user;
 
+    console.log('User data', user);
+
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
 
@@ -47,7 +49,16 @@ export default function AuthenticatedLayout({ header, children }) {
                             </div>
                         </div>
 
-                        <div className="hidden sm:ms-6 sm:flex sm:items-center">
+                        <div className="hidden sm:ms-6 sm:flex sm:items-center gap-3">
+                            <span className="text-white flex gap-3">
+                                <img src="/img/coin.png" className='w-[20px]' alt="" />
+                                {user.available_credits} Credits
+                            </span>
+
+                            <Link className='text-white py-1 px-3 rounded border transition-colors hover:text-gray-800 hover:bg-white' href="/">
+                                Get More
+                            </Link>
+
                             <div className="relative ms-3">
                                 <Dropdown>
                                     <Dropdown.Trigger>

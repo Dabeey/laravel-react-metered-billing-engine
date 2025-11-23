@@ -6,23 +6,30 @@ use Illuminate\Database\Eloquent\Model;
 
 class UsedFeature extends Model
 {
-    protected $fillable=[
+    protected $fillable = [
         'credits',
         'feature_id',
         'user_id',
-        'data'
+        'data',
     ];
 
-    public function cast() {
-        'data' => 'array'
+    // WRONG - should be protected function casts()
+    protected function casts(): array
+    {
+        return [
+            'data' => 'array',
+        ];
     }
 
-    public function user() {
-        return $this->belongsto(User::class)
+    // Missing semicolons
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
-    public function Feature() {
-        return $this->belongsto(Feature::class)
+    // Wrong capitalization and missing semicolon
+    public function feature()
+    {
+        return $this->belongsTo(Feature::class);
     }
-
 }

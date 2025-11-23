@@ -26,6 +26,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'available_credits',
     ];
 
     /**
@@ -49,5 +50,11 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function decreaseCredits(int $credits): void
+    {
+        $this->available_credits -= $credits;
+        $this->save();
     }
 }
