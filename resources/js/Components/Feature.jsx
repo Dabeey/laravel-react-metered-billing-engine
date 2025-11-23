@@ -4,7 +4,7 @@ import { Head, Link, usePage } from "@inertiajs/react";
 export default function Feature({ feature, answer, children}) {
     const {auth} = usePage().props;
 
-    const availableCredits = auth.user.availableCredits;
+    const availableCredits = auth.user.available_credits;
 
     return (
         <AuthenticatedLayout
@@ -34,9 +34,9 @@ export default function Feature({ feature, answer, children}) {
 
                                     <div>
                                         You don't have enough credits for this feature. GO {" "}
-                                        <link href="/" className="underline">
-                                        Buy more credits
-                                        </link>
+                                        <Link href="/" className="underline">
+                                            Buy more credits
+                                        </Link>
                                     </div>
                                 </div>
                             )}

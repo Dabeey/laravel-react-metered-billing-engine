@@ -48,7 +48,7 @@ class Feature2Controller extends Controller
             'data' => $data,
         ]);
 
-        return to_route('feature2.index')->with('answer', $number1 + $number2);
+        return to_route('feature2.index')->with('answer', $number1 - $number2);
 
     }
 }

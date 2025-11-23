@@ -45,7 +45,7 @@ export default function index({feature, answer}) {
                         name='number2'
                         value={data.number2}
                         className='mt-1 block w-full'
-                        onchange={(e) => setData('number2', e.target.value)}
+                        onChange={(e) => setData('number2', e.target.value)}
                     />
                     <InputError message={errors.number2} className="mt-2"/>
                 </div>
