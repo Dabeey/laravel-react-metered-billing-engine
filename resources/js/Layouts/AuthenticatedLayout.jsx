@@ -8,7 +8,6 @@ import { useState } from 'react';
 export default function AuthenticatedLayout({ header, children }) {
     const user = usePage().props.auth.user;
 
-    console.log('User data', user);
 
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
@@ -55,7 +54,8 @@ export default function AuthenticatedLayout({ header, children }) {
                                 {user.available_credits} Credits
                             </span>
 
-                            <Link className='text-white py-1 px-3 rounded border transition-colors hover:text-gray-800 hover:bg-white' href="/">
+                            <Link className='text-white py-1 px-3 rounded border transition-colors hover:text-gray-800 hover:bg-white' 
+                            href={route('credit.index')}>
                                 Get More
                             </Link>
 

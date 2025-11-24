@@ -26,6 +26,12 @@ class DatabaseSeeder extends Seeder
 
         // Seed packages
         Package::create([
+            'name' => 'Basic',
+            'price'=>5,
+            'credits' => 20
+        ]);
+
+        Package::create([
             'name' => 'Silver',
             'price'=>20,
             'credits' => 100

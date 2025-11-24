@@ -11,23 +11,21 @@ class UsedFeature extends Model
         'feature_id',
         'user_id',
         'data',
+        'data'
     ];
 
-    // WRONG - should be protected function casts()
-    protected function casts(): array
-    {
-        return [
-            'data' => 'array',
-        ];
-    }
+    // Correct cast syntax
+    protected $casts = [
+        'data' => 'array',
+    ];
 
-    // Missing semicolons
+    // Relationship to user
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    // Wrong capitalization and missing semicolon
+    // Relationship to feature
     public function feature()
     {
         return $this->belongsTo(Feature::class);
