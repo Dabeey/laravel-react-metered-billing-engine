@@ -120,7 +120,7 @@ export default function Welcome({ auth, features }) {
 
           {/* Footer */}
           <footer className="py-16 text-center text-sm text-black dark:text-white/70">
-            &copy; {new Date().getFullYear()} Your Company. All rights reserved.
+            &copy; {new Date().getFullYear()} Dabeey. All rights reserved.
           </footer>
         </div>
       </div>

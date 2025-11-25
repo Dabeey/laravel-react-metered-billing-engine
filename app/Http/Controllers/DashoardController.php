@@ -11,7 +11,7 @@ class DashoardController extends Controller
     public function index()
     {
         $usedFeatures = UsedFeature::with('feature')
-            ->where('user_id', auth()->id())
+            ->where('user_id', auth()->data->id())
             ->latest()
             ->paginate();
 
